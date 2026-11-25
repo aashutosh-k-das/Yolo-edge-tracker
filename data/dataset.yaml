@@ -1,0 +1,11 @@
+# YOLOv8 dataset config. Overwritten by `python data/prepare_dataset.py ...`.
+# Class ids MUST match the numbers in your label .txt files. Roboflow assigns them
+# alphabetically, so the order below is aircraft=0, drone=1, vehicle=2.
+path: data/dataset          # dataset root; use an ABSOLUTE path on Colab
+train: images/train         # relative to `path`
+val: images/val
+test: images/test
+names:
+  0: aircraft               # fixed-wing planes, airliners, helicopters
+  1: drone                  # multirotor + fixed-wing UAVs
+  2: vehicle                # cars, trucks, buses, motorbikes
