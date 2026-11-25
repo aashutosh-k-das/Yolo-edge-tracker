@@ -1,0 +1,7 @@
+# Jetson Nano (JetPack 4.6.x: Ubuntu 18.04, Python 3.6, CUDA 10.2, TensorRT 8.2, OpenCV 4.1.1).
+# TensorRT and OpenCV (with GStreamer) come with JetPack. Do NOT pip install opencv-python or tensorrt.
+# deploy/jetson_setup.sh installs these (with fallbacks); listed here for reference.
+numpy==1.19.4        # NOT 1.19.5 ("Illegal instruction" on Nano)
+scipy==1.5.4         # or: sudo apt install python3-scipy
+pyyaml               # or: sudo apt install python3-yaml
+pycuda==2021.1

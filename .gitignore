@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+runs/
+data/dataset/
+data/raw/
+weights/*
+!weights/.gitkeep
+*.engine
+*.calib.cache
+benchmark/results/
+*.mp4
+.DS_Store
+out/
+data/samples/

@@ -1,0 +1,21 @@
+# Dev / training machine (Python 3.9 - 3.12 recommended). Torch: install the CUDA build from pytorch.org.
+ultralytics>=8.3.0
+onnx>=1.15
+onnxslim>=0.1.30          # used by ultralytics' simplify=True
+onnxruntime>=1.17         # or onnxruntime-gpu on an NVIDIA machine
+opencv-python>=4.8
+numpy>=1.23
+scipy>=1.10
+pyyaml>=6.0
+roboflow>=1.1           # data/download_roboflow.py
+albumentations>=1.4     # enables Ultralytics' extra blur/CLAHE augmentations
+pandas>=2.0
+tabulate>=0.9             # markdown tables in benchmark/report.py
+matplotlib>=3.7
+streamlit>=1.40
+plotly>=5.19             # dashboard charts (rounded bars need >= 5.19)
+pytest>=7.0
+
+# NVIDIA GPU desktop only (TensorRT engines for that GPU):
+# tensorrt>=10.0
+# pycuda>=2024.1
