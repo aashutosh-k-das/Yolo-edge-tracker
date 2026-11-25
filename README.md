@@ -257,4 +257,4 @@ same license. See [LICENSE](LICENSE).
 
 ## Author
 
-**&lt;Your Name&gt;**, B.Tech CSE (AI/ML), final-year project · [GitHub](https://github.com/<your-username>) · [LinkedIn](https://www.linkedin.com/in/<your-profile>)
+**&lt;Aashutosh Kumar Das&gt;**, B.Tech CSE (AI/ML), final-year project · [GitHub](https://github.com/aashutosh-k-das) · [LinkedIn](https://www.linkedin.com/in/aashutosh-kumar-das-a15274291/)
