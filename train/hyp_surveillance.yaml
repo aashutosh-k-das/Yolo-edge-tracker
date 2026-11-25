@@ -1,0 +1,23 @@
+# Augmentation preset: GROUND-BASED surveillance camera (fixed / PTZ), looking up at the sky
+# (drones, aircraft) and along roads (vehicles). "Down" is always down in these scenes.
+# Applied ONLINE by Ultralytics, so each epoch sees a fresh random variant of every image.
+
+# --- Photometric: sky scenes vary hugely in exposure (backlit aircraft, haze, dusk)
+hsv_h: 0.015      # hue shift: keep tiny, since sky blue / vehicle colours are real cues
+hsv_s: 0.6        # saturation: overcast vs clear sky, haze
+hsv_v: 0.5        # brightness: dawn/dusk, silhouettes against bright sky
+
+# --- Geometric
+degrees: 5.0      # camera roll / PTZ tilt only. Large rotations make axis-aligned boxes loose
+translate: 0.1
+scale: 0.4        # zoom range 0.6x-1.4x. Above 0.5, tiny drones get shrunk below a few pixels
+shear: 1.0
+perspective: 0.0
+flipud: 0.0       # an upside-down sky/road never happens at inference time
+fliplr: 0.5       # left/right mirror is always physically plausible
+
+# --- Composition
+mosaic: 1.0       # 4-image mosaic: more small objects + varied context per batch
+close_mosaic: 15  # turn mosaic off for the last 15 epochs to fine-tune on realistic full frames
+mixup: 0.05       # light; heavy mixup creates ghost drones that look like birds
+copy_paste: 0.0   # only works with segmentation masks

@@ -1,0 +1,22 @@
+# Augmentation preset: AIR-TO-GROUND imagery (camera on a drone / aircraft, nadir or oblique view,
+# e.g. VisDrone-style). There is no fixed "up", so vertical flips are valid.
+
+# --- Photometric
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4        # shadows of buildings, time of day
+
+# --- Geometric
+degrees: 10.0     # modest. Arbitrary angles would need rotated (OBB) boxes, not axis-aligned ones
+translate: 0.1
+scale: 0.5        # altitude changes, so object scale varies a lot
+shear: 2.0
+perspective: 0.0005  # oblique viewing angle (keep <= 0.001)
+flipud: 0.5       # with fliplr gives all 4 mirror orientations, exact for axis-aligned boxes
+fliplr: 0.5
+
+# --- Composition
+mosaic: 1.0
+close_mosaic: 10
+mixup: 0.1
+copy_paste: 0.0
