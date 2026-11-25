@@ -1,0 +1,23 @@
+[Unit]
+Description=YOLOv8 + ByteTrack edge tracker
+# CSI cameras need the Argus daemon; RTSP sources need the network.
+After=network-online.target nvargus-daemon.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@USER@
+SupplementaryGroups=video
+WorkingDirectory=@DIR@
+EnvironmentFile=@DIR@/deploy/service/tracker.env
+# '+' runs this one step as root: lock CPU/GPU/EMC clocks at max for stable FPS (does not persist across boots)
+ExecStartPre=+/usr/bin/jetson_clocks
+ExecStart=/bin/bash @DIR@/deploy/service/start_tracker.sh
+Restart=on-failure
+RestartSec=5
+# give run.py time to close the video / track files cleanly on SIGTERM
+KillSignal=SIGTERM
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target
